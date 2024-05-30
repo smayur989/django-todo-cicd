@@ -1,8 +1,9 @@
-FROM python:3
-RUN pip install django==3.2
+FROM python:3.12
 
-COPY . .
+WORKDIR /app
 
-RUN python3 manage.py migrate
+COPY . /app
 
-CMD ["python3","manage.py","runserver","0.0.0.0:8001"]
+RUN pip install -r requirements.txt
+
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
