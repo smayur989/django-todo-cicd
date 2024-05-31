@@ -4,3 +4,8 @@ services:
     build: .
     ports:
       - "8000:8000"
+    volumes:
+      - todo-data:/app/data  # Adjust this path as needed
+
+volumes:
+  todo-data:
